@@ -3,7 +3,7 @@ import DatePicker from 'react-date-picker';
 import 'react-calendar/dist/Calendar.css'
 import 'react-date-picker/dist/DatePicker.css'
 import { useEffect, useState } from "react";
-import { Value } from "../types";
+// import { Value } from "../types";
 import ErrorMessage from "./ErrorMessage";
 import { useBuget } from "../hooks/useBudget";
 
@@ -14,7 +14,7 @@ const ExpenseForm = () => {
         expenseName: '',
         amount: '',
         category: '',
-        date: new Date()
+        date: new Date() as Date | null
     })
     const [ error, setError] = useState('')
     const { dispatch, state, AmountDisponible } = useBuget()
@@ -25,7 +25,7 @@ const ExpenseForm = () => {
             if (expenseToEdit) {
                 setExpense({
                     expenseName: expenseToEdit.expenseName,
-                    amount: expenseToEdit.amount,
+                    amount: String(expenseToEdit.amount),
                     category: expenseToEdit.category,
                     date: expenseToEdit.date
                 })
@@ -55,7 +55,7 @@ const ExpenseForm = () => {
             })
         }     
     }
-    const handleChangeDate = (value : Value) => {
+    const handleChangeDate = (value: Date | null) => {
         setExpense({
             ...expense,
             date: value
@@ -183,7 +183,7 @@ const ExpenseForm = () => {
             <DatePicker 
                 className="bg-slate-100 p-2 border-0"
                 value={expense.date}
-                onChange={handleChangeDate}
+                onChange={(value) => handleChangeDate(value as Date)}
             />
         </div>
         <input 

@@ -28,7 +28,6 @@ const ExpenseDetail = ({expense} : ExpenseDetailProps) => {
         ) => (
             <LeadingActions>
                 <SwipeAction
-                    renderIcon={() => <img src="/icono_ellipsis.svg" alt="icono bot n" className="w-5 h-5 mr-2" />}
                     onClick={() => handleEditExpense()}
                 >
                     <span className="text-white text-center">Actualizar</span>
@@ -43,7 +42,6 @@ const ExpenseDetail = ({expense} : ExpenseDetailProps) => {
         ) => (
             <TrailingActions>
                 <SwipeAction
-                    renderIcon={() => <img src="/icono_ellipsis.svg" alt="icono bot n" className="w-5 h-5 mr-2" />}
                     onClick={() => handleRemoveExpense()}                    
                     destructive={true}
                 >
@@ -75,7 +73,7 @@ const ExpenseDetail = ({expense} : ExpenseDetailProps) => {
   return (
     <SwipeableList>
     <SwipeableListItem
-        maxswipe={0.3}
+        // maxswipe={0.3}
         leadingActions={ leadingActions() }
         trailingActions={ trailingActions() }
     >

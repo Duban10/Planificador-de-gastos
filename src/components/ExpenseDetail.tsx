@@ -4,7 +4,7 @@ import {
     TrailingActions,
     SwipeableList,
     SwipeableListItem,
-    SwipeAction,
+    SwipeAction
 } from "react-swipeable-list"
 import { formatDate } from "../helpers"
 import { Expense } from "../types"

@@ -188,7 +188,7 @@ const ExpenseForm = () => {
         </div>
         <input 
             type="submit" 
-            className="bg-blue-700 cursor-pointer w-full p-2 text-white uppercase font-bold rounded-lg"
+            className="bg-blue-900 cursor-pointer w-full p-2 text-white uppercase font-bold rounded-lg"
             value={`${state.editExpense ? 'Guardar Cambios' : 'Registrar Gasto'}`}
         />
     </form>

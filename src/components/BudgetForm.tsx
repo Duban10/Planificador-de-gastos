@@ -31,7 +31,7 @@ const BudgetForm = () => {
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
         <div className="flex flex-col space-y-5">
-            <label htmlFor="budget" className="text-4xl text-blue-600 font-bold text-center">Definir presupuesto</label>
+            <label htmlFor="budget" className="text-4xl text-blue-900 font-bold text-center">Definir presupuesto</label>
             <input 
                 id="budget"
                 type="text" 
@@ -46,7 +46,7 @@ const BudgetForm = () => {
         <input 
             type="submit"
             value="Definir Presupuesto"
-            className="bg-blue-600 hover:bg-blue-700 cursor-pointer w-full p-2 text-white font-black uppercase disabled:opacity-40"
+            className="bg-blue-900 hover:bg-blue-600 cursor-pointer w-full p-2 text-white font-black uppercase disabled:opacity-40"
             disabled={isValid}
         />
     </form>
